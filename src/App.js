@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import List from './List.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [list, setList] = useState([
+        {
+            type: 'video',
+            url: 'https://www.youtube.com/embed/rN6nlNC9WQA?rel=0&amp;controls=0&amp;showinfo=0',
+            views: 50
+        },
+        {
+            type: 'video',
+            url: 'https://www.youtube.com/embed/dVkK36KOcqs?rel=0&amp;controls=0&amp;showinfo=0',
+            views: 12
+        },
+        {
+            type: 'article',
+            title: 'Невероятные события в неизвестном поселке...',
+            views: 175
+        },
+        {
+            type: 'article',
+            title: 'Секретные данные были раскрыты!',
+            views: 1532
+        },
+        {
+            type: 'video',
+            url: 'https://www.youtube.com/embed/TKmGU77INaM?rel=0&amp;controls=0&amp;showinfo=0',
+            views: 4253
+        },
+        {
+            type: 'article',
+            title: 'Кот Бегемот обладает невероятной...',
+            views: 12,
+        },
+    ]);
+
+    return (
+        <List list={list} />
+    );
 }
-
-export default App;
